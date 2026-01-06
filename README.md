@@ -20,4 +20,5 @@ Use Stories
 4. As a librarian I want to see an up-to-date status of books for late fees/borrowed time/reserved etc.
 5. As a data engineer I want a Power BI dash to see pipeline metrics/trends.
 
+<img width="741" height="137" alt="image" src="https://github.com/user-attachments/assets/8758a4cc-80ba-40eb-a6de-77f8397015ce" />
 
