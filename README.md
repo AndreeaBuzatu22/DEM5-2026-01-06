@@ -1,4 +1,4 @@
-# 📚 Library Data Automation Project
+# Library Data Automation Project
 
 ## 1. Project Introduction
 
