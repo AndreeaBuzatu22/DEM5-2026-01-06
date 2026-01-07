@@ -34,6 +34,71 @@ The aim of this project is to design and implement an **automated data processin
 
 <img width="741" height="137" alt="image" src="https://github.com/user-attachments/assets/8758a4cc-80ba-40eb-a6de-77f8397015ce" />
 
+## 4. Data Processing Script Overview
+
+### Purpose of the Python Script
+The core of this project is a Python data cleaning and transformation script. Its purpose is to automate tasks that were previously performed manually, ensuring that library data is processed in a consistent, reliable, and repeatable way.
+The script takes raw library data as input and produces a cleaned, validated dataset that is ready for reporting and visualisation in Power BI.
+
+### What the Script Does
+At a high level, the script performs the following steps:
+
+- Loads the raw library dataset from a CSV file  
+- Removes empty and duplicate records  
+- Standardises column names and data formats  
+- Cleans and standardises book titles for consistent presentation  
+- Converts identifiers (IDs) to text to avoid reporting issues  
+- Parses checkout and return dates into proper date formats  
+- Calculates the number of days a book was borrowed  
+- Removes invalid records where borrowed time is negative  
+- Outputs a clean CSV file for downstream use  
+
+
+---
+
+## 5. Data Quality Rules and Validation
+
+To ensure the data is reliable for decision-making, several data quality rules are applied within the script:
+
+- **Empty rows** are removed  
+- **Duplicate records** are dropped  
+- **Invalid dates** are set to null  
+- **Negative borrow durations** (return date before checkout date) are removed  
+- **Book titles** are standardised so they are consistently formatted
+- **Borrowed time** columns is added 
+
+---
+
+
+## 6. Testing 
+
+### Unit Testing Approach
+Unit tests are implemented using Python’s built-in `unittest` framework. Individual functions are tested in isolation to confirm they return the correct results under different scenarios.
+
+The tests focus on:
+- Correct calculation of borrowed time  
+- Handling of missing or invalid dates  
+
+
+### Benefits 
+- Increased confidence in the accuracy of reports  
+- Reduced risk of faulty data reaching Power BI dashboards  
+
+
+---
+
+## 7. Output and Reporting Readiness
+
+The final output of the script is a cleaned CSV file that is:
+
+- Consistent in structure  
+- Free from obvious data quality issues  
+- Ready to be consumed by Power BI  
+
+---
+
+
+
 
 
 
