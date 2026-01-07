@@ -19,7 +19,7 @@ def load_and_clean_data(file):
                        inplace=True)
     
     # Remove duplicates
-    df = df.drop_duplicates()
+    df = df.drop_duplicates().reset_index(drop= True)
 
     for col in ["checkout_date", "return_date"]:
         df[col]= (
@@ -65,6 +65,9 @@ def calculate_borrow_time(row):
 
         checkout = row["checkout_date"]
         returned = row["return_date"]
+
+        if pd.isna(checkout) or pd.isna(returned):
+            return pd.NA
         # Calculate the difference in days
         borrow_time = (returned - checkout).days
         return borrow_time
@@ -80,8 +83,13 @@ def process_library_data(file_path):
     
     # Calculate borrow time for each row
     df['borrow_time'] = df.apply(calculate_borrow_time, axis=1)
+    dropCount = 0
+    valid_loan_data = df[df["borrow_time"].isna() | (df["borrow_time"]>=0)]
+    dropCount += len(df)- len(valid_loan_data)
+
+    print (f"Dropped row due to negative borrowed time: {dropCount}")
     
-    return df
+    return valid_loan_data
 
 
 if __name__ == "__main__":
@@ -90,5 +98,6 @@ if __name__ == "__main__":
     # Process the library data
     processed_data = process_library_data(file_path)
     
-    # Print the processed data to check the output
-    print(processed_data.head(20))
+    # save to csv
+    processed_data.to_csv('clean_library_data.csv',index=False)
+    
