@@ -20,11 +20,21 @@ def load_and_clean_data(file):
     
     # Remove duplicates
     df = df.drop_duplicates()
+
+    for col in ["checkout_date", "return_date"]:
+        df[col]= (
+            df[col]
+            .astype('string')
+            .str.replace('"','', regex= False)
+            .str.strip()
+        )
     
     # Convert relevant columns to the appropriate data types
     df['id'] = df['id'].astype(str)
     df["book_title"] = df["book_title"].astype(str)
     df['customer_id'] = df['customer_id'].astype(str)
+
+
     df['checkout_date'] = pd.to_datetime(df['checkout_date'], errors='coerce', dayfirst=True)
     df['return_date'] = pd.to_datetime(df['return_date'], errors='coerce', dayfirst=True)
     
@@ -81,4 +91,4 @@ if __name__ == "__main__":
     processed_data = process_library_data(file_path)
     
     # Print the processed data to check the output
-    print(processed_data.head())
+    print(processed_data.head(20))
