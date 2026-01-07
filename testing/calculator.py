@@ -3,7 +3,7 @@ class Calculator:
         self.num1=num1
         self.num2=num2
 
-    def get_sum(self):
+    def get_sum(self): #methods
         return self.num1 + self.num2
         
     def get_product(self):
