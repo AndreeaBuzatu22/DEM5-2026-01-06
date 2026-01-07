@@ -89,11 +89,7 @@ The tests focus on:
 
 ## 7. Output and Reporting Readiness
 
-The final output of the script is a cleaned CSV file that is:
-
-- Consistent in structure  
-- Free from obvious data quality issues  
-- Ready to be consumed by Power BI  
+The final output of the script is a cleaned CSV file that is consistent in structure, free from obvious data quality issues and ready to be consumed by Power BI  
 
 ---
 
