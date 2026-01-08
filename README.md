@@ -87,9 +87,27 @@ The tests focus on:
 
 ---
 
-## 7. Output and Reporting Readiness
+## 7. Output and Automation
 
-The final output of the script is a cleaned CSV file that is consistent in structure, free from obvious data quality issues and ready to be consumed by Power BI  
+### Containerisation with Docker
+The data cleaning script has been containerised using Docker to improve portability, reliability, and automation readiness.
+
+### Benefits of Docker
+- Ensures consistent execution across different environments  
+- Eliminates local dependency and configuration issues  
+- Simplifies execution for developers and reviewers  
+- Provides a foundation for CI/CD integration  
+- Supports scalable and repeatable data processing  
+
+### Execution Model
+The Docker container runs as a batch job:
+1. Reads raw input data from a mounted directory  
+2. Executes the data cleaning and validation logic  
+3. Writes the cleaned dataset back to the host system  
+
+This design allows cleaned data to persist outside the container and be easily consumed by downstream processes.
+
+--- 
 
 ## 8. Arhitecture Design for Login Platform
 <img width="1043" height="198" alt="image" src="https://github.com/user-attachments/assets/a11636a1-3221-4905-a7f5-fa45241dd240" />
