@@ -91,6 +91,8 @@ The tests focus on:
 
 The final output of the script is a cleaned CSV file that is consistent in structure, free from obvious data quality issues and ready to be consumed by Power BI  
 
+<img width="1043" height="198" alt="image" src="https://github.com/user-attachments/assets/a11636a1-3221-4905-a7f5-fa45241dd240" />
+
 ---
 
 
