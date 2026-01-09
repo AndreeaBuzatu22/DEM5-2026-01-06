@@ -113,6 +113,29 @@ This design allows cleaned data to persist outside the container and be easily c
 <img width="1043" height="198" alt="image" src="https://github.com/user-attachments/assets/a11636a1-3221-4905-a7f5-fa45241dd240" />
 
 ---
+## 9. Power BI Dashboard
+
+### Purpose
+The Power BI dashboard provides visibility into both **data quality** and **operational metrics**, allowing users to quickly assess the health of the data and identify potential issues.
+
+### Dashboard Features
+- **Date slicer** to filter metrics by processing run date  
+- **Dataset slicer** to switch between Books and Customers metrics  
+
+### KPI Cards
+- Total Rows Loaded  
+- Valid Rows (After Cleaning)  
+- Blank Rows Removed  
+- Invalid Checkout Dates  
+- Invalid Return Dates  
+
+### Visualisations
+- **Line chart:** Rows Loaded vs Valid Rows  
+- **Donut chart:** Valid Rows vs Blank Rows  
+- **KPI cards:** Key data quality indicators  
+
+These visuals enable quick identification of anomalies and trends in data quality over time.
+<img width="1092" height="590" alt="image" src="https://github.com/user-attachments/assets/7e2d1cb8-399f-448a-b80c-900498806a5a" />
 
 
 
