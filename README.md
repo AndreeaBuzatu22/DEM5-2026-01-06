@@ -113,7 +113,7 @@ This design allows cleaned data to persist outside the container and be easily c
 <img width="1043" height="198" alt="image" src="https://github.com/user-attachments/assets/a11636a1-3221-4905-a7f5-fa45241dd240" />
 
 ---
-## 7. Power BI Dashboard
+## 9. Power BI Dashboard
 
 ### Purpose
 The Power BI dashboard provides visibility into both **data quality** and **operational metrics**, allowing users to quickly assess the health of the data and identify potential issues.
