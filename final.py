@@ -65,10 +65,38 @@ def load_and_clean_books(file_path: str) -> pd.DataFrame:
     print(f"Rows after cleaning: {len(df)}")
 
     return df
+def load_and_clean_customers(file_path: str) -> pd.DataFrame:
+    print("\n--- Cleaning CUSTOMERS dataset ---")
 
+    df = pd.read_csv(file_path)
+    rows_loaded = len(df)
+
+    blank_rows = df.isna().all(axis=1).sum()
+    df = df.dropna(how="all")
+
+    df = df.rename(columns={"Customer ID": "customer_id", "Customer Name": "customer_name"})
+
+    duplicate_rows = df.duplicated().sum()
+    df = df.drop_duplicates().reset_index(drop=True)
+
+    df["customer_id"] = df["customer_id"].astype("string").str.strip()
+    df["customer_name"] = df["customer_name"].astype("string").str.strip()
+
+    missing_customer_ids = df["customer_id"].isna().sum()
+
+    print(f"Rows loaded: {rows_loaded}")
+    print(f"Blank rows removed: {blank_rows}")
+    print(f"Duplicate rows removed: {duplicate_rows}")
+    print(f"Missing customer IDs: {missing_customer_ids}")
+    print(f"Rows after cleaning: {len(df)}")
+
+    return df
 
 if __name__ == "__main__":
     file_path = "03_Library Systembook.csv"
+    customers_file = "03_Library SystemCustomers.csv"
+    cleaned_customers = load_and_clean_customers(customers_file)
+    cleaned_customers.to_csv("clean_library_customers.csv", index=False)
 
     cleaned_books = load_and_clean_books(file_path)
     cleaned_books.to_csv("clean_library_books.csv", index=False)
