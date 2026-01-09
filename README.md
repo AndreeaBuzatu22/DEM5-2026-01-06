@@ -135,6 +135,7 @@ The Power BI dashboard provides visibility into both **data quality** and **oper
 - **KPI cards:** Key data quality indicators  
 
 These visuals enable quick identification of anomalies and trends in data quality over time.
+<img width="1092" height="590" alt="image" src="https://github.com/user-attachments/assets/7e2d1cb8-399f-448a-b80c-900498806a5a" />
 
 
 
